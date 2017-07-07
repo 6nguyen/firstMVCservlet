@@ -1,6 +1,8 @@
 package com.nguyen92.servlet.firstMVCservlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,10 +34,10 @@ public class MVCservlet extends HttpServlet {
 		request.setAttribute("studentList", students);
 		
 		// Step 1:  get request dispatcher to send data to JSP
-		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/studentView");
 		
 		// Step 2:  forward the request to JSP file
-		
+		dispatcher.forward(request, response);
 		
 		
 	}
