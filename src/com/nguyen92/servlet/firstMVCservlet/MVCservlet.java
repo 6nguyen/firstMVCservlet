@@ -1,6 +1,7 @@
 package com.nguyen92.servlet.firstMVCservlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,16 +30,17 @@ public class MVCservlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// Step 0:  Add sample data
-		String[] students = {"Ashley", "Megan", "Chloe"};
+		// Step 1:  get the Student data from the Model (studentDataUtil helper class)
+		List<Student> students = studentDataUtil.getStudents();
+		
+		// Step 2:  add students to the request object
 		request.setAttribute("studentList", students);
 		
-		// Step 1:  get request dispatcher to send data to JSP
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/viewStudent.jsp");
+		// Step 3:  get the request dispatcher
+		RequestDispatcher dispatcher = request.getRequestDispatcher("viewStudent.jsp");
 		
-		// Step 2:  forward the request to JSP file
+		// Step 4:  forward request to JSP page		
 		dispatcher.forward(request, response);
-		
 		
 	}
 
