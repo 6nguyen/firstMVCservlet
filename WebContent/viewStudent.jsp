@@ -10,10 +10,22 @@
 <body>
 <h2>Students</h2>
 
-<c:forEach var="currentStudent" items="${studentList}">
-	${currentStudent.firstName} ${currentStudent.lastName}, ${currentStudent.email}
-	<br/>
+<table border="1">
+	<tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Email</th>
+	</tr>
+	<c:forEach var="currentStudent" items="${studentList}">
+	<tr>
+		<td>${currentStudent.firstName}</td>
+		<td>${currentStudent.lastName}</td>
+		<td>${currentStudent.email}</td>
+	</tr>
 </c:forEach>
+	
+
+</table>
 
 </body>
 
