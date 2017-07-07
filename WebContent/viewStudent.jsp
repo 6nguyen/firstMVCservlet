@@ -9,6 +9,8 @@
 
 <body>
 <h2>Students</h2>
+<hr>
+<br/><br/>
 
 <table border="1">
 	<tr>
