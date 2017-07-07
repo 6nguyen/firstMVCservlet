@@ -34,7 +34,7 @@ public class MVCservlet extends HttpServlet {
 		request.setAttribute("studentList", students);
 		
 		// Step 1:  get request dispatcher to send data to JSP
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/studentView");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/viewStudent.jsp");
 		
 		// Step 2:  forward the request to JSP file
 		dispatcher.forward(request, response);
