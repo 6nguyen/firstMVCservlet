@@ -11,7 +11,7 @@
 <h2>Students</h2>
 
 <c:forEach var="currentStudent" items="${studentList}">
-	${currentStudent}
+	${currentStudent.firstName} ${currentStudent.lastName}, ${currentStudent.email}
 	<br/>
 </c:forEach>
 
